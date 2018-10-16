@@ -23,7 +23,7 @@ class Tourist
   end
 
   def landmarks
-    Landmark.all.select {|landmark| landmark.tourists == self}
+    self.trips.collect {|trip| trip.landmark}
   end
 
   def visit_landmark(landmark)
